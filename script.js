@@ -1,5 +1,5 @@
-let firstCard=10
-let secondCard=11
+let firstCard=getRandomCard()
+let secondCard=getRandomCard()
 
 let cards=[firstCard, secondCard]
 let sum= firstCard + secondCard 
@@ -10,7 +10,10 @@ let messageEl = document.getElementById("message-el")
 let sumEl=document.querySelector("#sum-el")
 let cardsEl=document.querySelector("#card-el")
 function renderGame(){ 
-cardsEl.textContent="The cards are: " + " " + cards[0] + " ," + cards[1] + " " 
+cardsEl.textContent="The cards are: "
+for(i=0;i<cards.length;i++){
+    cardsEl.textContent += cards[i]  + " "    
+    }
 sumEl.textContent="Sum: " + sum      
 if(sum <= 21){
         message="Do you want to draw a new card?"
